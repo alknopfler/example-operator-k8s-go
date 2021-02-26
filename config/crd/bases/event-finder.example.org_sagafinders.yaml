@@ -37,7 +37,8 @@ spec:
           description: SagaFinderSpec defines the desired state of SagaFinder
           properties:
             size:
-              type: string
+              format: int32
+              type: integer
           type: object
         status:
           description: SagaFinderStatus defines the observed state of SagaFinder
