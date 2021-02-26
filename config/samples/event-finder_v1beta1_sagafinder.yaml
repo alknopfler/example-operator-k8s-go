@@ -1,0 +1,7 @@
+apiVersion: event-finder.example.org/v1beta1
+kind: SagaFinder
+metadata:
+  name: sagafinder-sample
+spec:
+  # Add fields here
+  foo: bar

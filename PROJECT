@@ -1,0 +1,7 @@
+domain: example.org
+repo: github.com/alknopfler/example-operator-k8s-go
+resources:
+- group: event-finder
+  kind: SagaFinder
+  version: v1beta1
+version: "2"

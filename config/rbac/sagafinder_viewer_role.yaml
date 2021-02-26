@@ -1,0 +1,20 @@
+# permissions for end users to view sagafinders.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: sagafinder-viewer-role
+rules:
+- apiGroups:
+  - event-finder.example.org
+  resources:
+  - sagafinders
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - event-finder.example.org
+  resources:
+  - sagafinders/status
+  verbs:
+  - get
