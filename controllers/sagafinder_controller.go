@@ -70,7 +70,7 @@ func (r *SagaFinderReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) 
 	return ctrl.Result{}, nil
 }
 
-func (r *SagaFinderReconciler) deploymentForSaga( s *eventfinderv1beta1.SagaFinder) *appsv1.Deployment{
+func (r *SagaFinderReconciler) deploymentForSaga(s *eventfinderv1beta1.SagaFinder) *appsv1.Deployment{
 
 	ls := labelsForSaga(s.Name)
 	replicas := s.Spec.Size
@@ -116,5 +116,6 @@ func labelsForSaga(name string) map[string]string {
 func (r *SagaFinderReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
 		For(&eventfinderv1beta1.SagaFinder{}).
+		Owns(&appsv1.Deployment{}).
 		Complete(r)
 }
